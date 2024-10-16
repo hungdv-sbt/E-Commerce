@@ -1,56 +1,79 @@
-*.gem
-*.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/spec/examples.txt
-/test/tmp/
-/test/version_tmp/
-/tmp/
+# Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/master.key
 
-# Used by dotenv library to load environment variables.
-# .env
+# Only include if you have production secrets in this file, which is no longer a Rails default
+# config/secrets.yml
 
-# Ignore Byebug command history file.
-.byebug_history
-
-## Specific to RubyMotion:
-.dat*
-.repl_history
-build/
-*.bridgesupport
-build-iPhoneOS/
-build-iPhoneSimulator/
-
-## Specific to RubyMotion (use of CocoaPods):
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# vendor/Pods/
-
-## Documentation cache and generated files:
-/.yardoc/
-/_yardoc/
-/doc/
-/rdoc/
+# dotenv
+# Comment out this rule if environment variables can be committed
+.env.staging.local
+.env.production.local
+.env.local
+.env
 
 ## Environment normalization:
-/.bundle/
+/.bundle
 /vendor/bundle
-/lib/bundler/man/
 
-# for a library or gem, you might want to ignore these files since the code is
-# intended to run in multiple environments; otherwise, check them in:
-# Gemfile.lock
-# .ruby-version
-# .ruby-gemset
+# these should all be checked in to normalize the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-# Used by RuboCop. Remote config files pulled in from inherit_from directive.
-# .rubocop-https?--*
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore node_modules
+node_modules/
+
+# Ignore db files
+/db/*.sqlite3
+/db/schema.rb
+/db/*.sqlite3-journal
+# /db/migrate
+
+*.rbc
+capybara-*.html
+.rspec
+log/
+/tmp/
+/coverage/
+/spec/tmp
+*.orig
+rerun.txt
+pickle-email-*.html
+yarn-error.log
+.fuse_hidden*
+.DS_Store
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+# Gemfile.lock
+.idea/*
+*.bk
+yarn-debug.log*
+.yarn-integrity
+
+/public/packs
+/public/assets
+/public/uploads
+/public/packs-test
+/yarn-error.log
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
