@@ -21,19 +21,19 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 gem 'devise'    # Quản lý người dùng
 gem 'pundit'    # Phân quyền (policy)
 gem 'draper'    # Decorator để xử lý logic hiển thị
-gem 'bootstrap', '~> 5.0' # Để làm giao diện dễ dàng hơn
 gem 'dotenv'
 gem 'dotenv-rails'
-gem 'bcrypt', '~> 3.1.7'
 gem "js-routes"
+gem 'jquery-rails'
+gem 'sweetalert2-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

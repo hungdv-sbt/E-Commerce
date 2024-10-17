@@ -10,4 +10,7 @@ class ProductDecorator < Draper::Decorator
   #     end
   #   end
 
+  def formatted_price
+    h.number_to_currency(object.price)
+  end
 end

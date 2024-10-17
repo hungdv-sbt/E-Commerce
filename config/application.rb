@@ -5,6 +5,9 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+require "active_storage/engine"
+require 'dotenv'
+Dotenv.load
 
 module EcommerceApp
   class Application < Rails::Application
