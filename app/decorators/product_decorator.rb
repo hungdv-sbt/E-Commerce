@@ -11,6 +11,12 @@ class ProductDecorator < Draper::Decorator
   #   end
 
   def formatted_price
-    h.number_to_currency(object.price)
+    format_number_with_dots(object.price)
+  end
+
+  private
+
+  def format_number_with_dots(number)
+    number.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
   end
 end
