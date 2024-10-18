@@ -16,7 +16,7 @@
 </p>
 
 <!-- Flickity HTML init -->
-<div class="carousel" data-flickity='{ "fullscreen": true }'>
+<div class="carousel" >
   <% @product.images.each do |image| %>
     <div class="carousel-cell"><%= image_tag url_for(image), data: { "flickity-lazyload": image.filename } %></div>
   <% end %>
