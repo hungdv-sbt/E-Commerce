@@ -1,0 +1,81 @@
+<%= stylesheet_link_tag 'cart' %>
+<%= javascript_pack_tag "counter_product" %>
+
+<main id="main" class="">
+  <div class="checkout-page-title page-title">
+    <div class="page-title-inner flex-row medium-flex-wrap container">
+      <div class="flex-col flex-grow medium-text-center">
+        <nav class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
+          <a href="https://enic.vn/cart/" class="current">
+          Shopping Cart  	   	</a>
+          <span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+          <a href="https://enic.vn/checkout/" class="hide-for-small">
+          Checkout details  	   </a>
+          <span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
+          <a href="#" class="no-click hide-for-small">
+          Order Complete  	   </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="cart-container container page-wrapper page-checkout">
+    <div class="woocommerce">
+      <div class="woocommerce-notices-wrapper"></div>
+      <div class="woocommerce row row-large row-divided">
+        <div class="col large-7 pb-0 cart-auto-refresh">
+          <form class="woocommerce-cart-form">
+            <div class="cart-wrapper sm-touch-scroll">
+              <div class="d-flex shop_table shop_table_responsive cart woocommerce-cart-form__contents">
+                  <div class="product-name" colspan="3">Sản phẩm</div>
+                  <div class="product-price">Giá</div>
+                  <div class="product-quantity">Số lượng</div>
+                  <div class="product-subtotal">Tạm tính</div>
+              </div>
+              <div id="show-cart-items">
+                <%= render partial: 'cart_items/list_cart_item', locals: { cart_items: @cart_items } %>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="cart-collaterals large-5 col pb-0">
+          <div class="cart-sidebar col-inner ">
+            <div class="cart_totals ">
+              <table cellspacing="0">
+                <thead>
+                  <tr>
+                    <th class="product-name" colspan="2" style="border-width:3px;">Cộng giỏ hàng</th>
+                  </tr>
+                </thead>
+              </table>
+              <h2>Cộng giỏ hàng</h2>
+              <table cellspacing="0" class="shop_table shop_table_responsive">
+                <tbody>
+                  <tr class="cart-subtotal">
+                    <th>Tạm tính</th>
+                    <td data-title="Tạm tính"><span class="woocommerce-Price-amount amount total"><%= format_number_with_dots(@total_price) %>&nbsp;₫</span></td>
+                  </tr>
+                  <tr class="order-total">
+                    <th>Tổng</th>
+                    <td data-title="Tổng"><strong><span class="woocommerce-Price-amount amount total"><%= format_number_with_dots(@total_price) %>&nbsp;₫</span></strong> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="wc-proceed-to-checkout">
+                <input type="hidden" id="total-price" value="<%= @total_price %>">
+                <a href="javascript:void()" class="checkout-button button alt wc-forward" onclick="CounterProduct.payment()">ĐẶT HÀNG</a>	
+              </div>
+            </div>
+            <form class="checkout_coupon mb-0" method="post">
+              <div class="coupon">
+                <h3 class="widget-title"><i class="icon-tag"></i> Phiếu ưu đãi</h3>
+                <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi"> <input type="submit" class="is-form expand" name="apply_coupon" value="Áp dụng">
+              </div>
+            </form>
+            <div class="cart-sidebar-content relative"></div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-footer-content after-cart-content relative"></div>
+    </div>
+  </div>
+</main>

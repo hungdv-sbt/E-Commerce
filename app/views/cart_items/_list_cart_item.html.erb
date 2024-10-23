@@ -1,0 +1,42 @@
+<%= javascript_pack_tag "counter_product" %>
+
+
+<% cart_items.each do |cart| %>
+  <div class="d-flex woocommerce-cart-form__cart-item cart_item align-items-center p-3">
+    <div class="product-name d-flex align-items-center">
+      <div class="product-remove">
+        <a href="javascript:void()" onclick="CounterProduct.removeCart(<%= cart.id %>)" data-product_id="<%= cart.product.id %>" class="remove" aria-label="Xóa sản phẩm này">×</a>						
+      </div>
+      <div class="product-thumbnail">
+        <a href="/"><%= image_tag url_for(cart.product.images.first) %></a>						
+      </div>
+      <div class="w-50" style="margin-left: 5px;">
+        <a href="/"><%= cart.product.name %></a>
+      </div>
+    </div>
+    <div class="product-price" data-title="Giá">
+      <span class="woocommerce-Price-amount amount"><%= cart.decorate.formatted_price %>&nbsp;₫</span>						
+    </div>
+    <div class="product-quantity" data-title="Số lượng">
+      <div class="quantity buttons_added">
+        <input type="button" value="-" class="minus button is-form" onclick="CounterProduct.removeQuantity(<%= cart.id %>)">
+        <label class="screen-reader-text" for="quantity_<%= cart.id %>">Bộ tủ gương lavabo phòng tắm cao cấp Enic BT Plus 80cm - 100cm số lượng</label>
+        <input type="number" id="quantity_<%= cart.id %>" class="input-text qty text quantity" step="1" min="1" max="80" name="cart[a0de51aa202a5aa400f68c0dece6cfc5][qty]" value="<%= cart.quantity %>" title="SL" size="4" placeholder="" inputmode="numeric">
+        <input type="button" value="+" onclick="CounterProduct.addQuantity(<%= cart.id %>)" class="plus button is-form">	
+      </div>
+    </div>
+    <div class="product-subtotal" data-title="Tạm tính">
+      <span class="woocommerce-Price-amount amount"><%= cart.decorate.formatted_total_price %>&nbsp;₫</span>						
+    </div>
+  </div>
+<% end %>
+<div class="d-flex">
+  <div colspan="6" class="actions clear">
+    <div class="continue-shopping pull-left text-left">
+      <a class="button-continue-shopping button primary is-outline" href="<%= root_path() %>">
+      ←&nbsp;Tiếp tục xem sản phẩm	</a>
+    </div>
+    <!-- <button type="submit" class="button primary mt-0 pull-left small" name="update_cart" value="Cập nhật giỏ hàng" disabled="" aria-disabled="true">Cập nhật giỏ hàng</button> -->
+    <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="1b8a59111a"><input type="hidden" name="_wp_http_referer" value="/cart/">				
+  </div>
+</div>

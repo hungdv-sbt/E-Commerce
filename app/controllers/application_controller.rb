@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :count_cart
+
+  def count_cart
+    @count = current_user ? current_user.cart&.cart_items&.count : 0
+  end
 
   protected
 

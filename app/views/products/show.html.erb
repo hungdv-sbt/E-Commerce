@@ -1,27 +1,153 @@
-<p id="notice"><%= notice %></p>
+<%= javascript_pack_tag "counter_product" %>
+<%= javascript_pack_tag "product" %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="d-flex mt-4">
+  <div class="product-gallery large-6 col">
+    <div class="carousel carousel-main" data-flickity>
+      <% @product.images.each do |image| %>
+        <div class="carousel-cell"><%= image_tag url_for(image) %></div>
+      <% end %>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <div class="carousel carousel-nav"  data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+      <% @product.images.each do |image| %>
+        <div class="carousel-cell"><%= image_tag url_for(image) %></div>
+      <% end %>
+    </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <div class="khuyenmai_new mbl">
+      <h2>Chương trình ưu đãi:</h2>
+      <ul class="vesinh">
+        <li class="xiphong" style="display:none;">Tặng kèm xi phông</li>    
+        <li class="voixitbon" style="display:none;">Giá giảm còn 4.500.000 đ (màu inox và đen) và 5.000.000 đ (màu gold) khi mua cùng bồn tắm<span class="saleoff">HOT</span></li>
+        <li class="senks" style="display:none;">Đặc biệt tặng kèm kệ để đồ gắn trên sen tắm khi đặt hàng hôm nay <span class="saleoff">HOT</span></li>
+        <li>Miễn phí lắp đặt tại tỉnh/thành phố có showroom Enic</li>
+        <li>Miễn phí vận chuyển toàn quốc</li>
+        <li>Nhận hàng được kiểm tra trước khi thanh toán</li>
+      </ul>
+      <ul class="bep" style="display:none;">
+        <li>Miễn phí lắp đặt tại tỉnh/thành phố có showroom Enic</li>
+        <li>Miễn phí vận chuyển toàn quốc</li>
+        <li>Nhận hàng được kiểm tra trước khi thanh toán</li>
+      </ul>
+    </div>
+  </div>
 
-<!-- Flickity HTML init -->
-<div class="carousel" >
-  <% @product.images.each do |image| %>
-    <div class="carousel-cell"><%= image_tag url_for(image), data: { "flickity-lazyload": image.filename } %></div>
-  <% end %>
+  <div class="product-info summary col-fit col entry-summary product-summary p-3">
+    <h1 class="product-title product_title entry-title"><%= @product.name %></h1>
+
+    <div class="single_variation_wrap">
+			<div class="woocommerce-variation single_variation">
+        <div class="woocommerce-variation-description">
+          <input type="hidden" id="price" value="<%= @product.price %>">
+          <p class="gia"><span class="giagiam"><%= @product.decorate.formatted_price %>&nbsp;₫</span></p>
+          <div><%= @product.description.html_safe %></div>
+          <div class="khuyen-mai tug">
+            <h4>Bộ tủ phòng tắm bao gồm:</h4>
+            <ul>
+              <li>Tủ gương, tủ chậu Lavabo, đặc biệt tặng kèm xi phông ống dẫn inox 304 (chưa bao gồm vòi rửa)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+		</div>
+
+    <div class="sticky-add-to-cart-wrapper">
+      <div class="sticky-add-to-cart" >
+        <div class="quantity buttons_added">
+          <input type="button" value="-" class="minus button is-form" onclick="Product.removeQuantity('<%= @product.id %>')">
+          <label class="screen-reader-text" for="quantity_<%= @product.id %>"><%= @product.name %></label>
+          <input type="number" id="quantity_<%= @product.id %>" class="input-text qty text quantity" step="1" min="1" max="80" name="quantity" value="1" title="SL" size="4" placeholder="" inputmode="numeric">
+          <input type="button" value="+" class="plus button is-form" onclick="Product.addQuantity('<%= @product.id %>')">
+        </div>
+      </div>
+
+      <div class="after-form">
+        <a type="button" class="devvn_buy_now devvn_buy_now_style" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          ĐẶT HÀNG NGAY
+        </a>
+      </div>
+
+      <button type="button" class="single_add_to_cart_button button alt" onclick="Product.addCart('<%= @product.id %>', true)">Thêm vào giỏ</button>
+    </div>
+  </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 950px">
+    <div class="modal-content">
+      <div class="devvn-popup-title">
+        <span><%= @product.name %></span>
+        <button type="button" class="btn-close devvn-popup-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="devvn-popup-content devvn-popup-content_19008 ">
+        <div class="devvn-popup-content-left ">
+          <div class="devvn-popup-prod">
+            <div class="devvn-popup-img"><%= image_tag url_for(@product.images.first), width: '100px', height: '100px' %></div>
+            <div class="devvn-popup-info">
+              <span class="devvn_title"><%= @product.name %></span>
+            </div>
+          </div>
+          <%= @product.description.html_safe %>
+          <div class="sticky-add-to-cart" >
+            <div class="quantity buttons_added">
+              <input type="button" value="-" class="minus button is-form" onclick="Product.removeQuantity('<%= @product.id %>')">
+              <label class="screen-reader-text" for="quantity_<%= @product.id %>"><%= @product.name %></label>
+              <input type="number" id="quantity_<%= @product.id %>" class="input-text qty text quantity" step="1" min="1" max="80" name="quantity" value="1" title="SL" size="4" placeholder="" inputmode="numeric">
+              <input type="button" value="+" class="plus button is-form" onclick="Product.addQuantity('<%= @product.id %>')">
+            </div>
+          </div>                       
+        </div>
+        <div class="devvn-popup-content-right">
+          <form class="devvn_cusstom_info" id="devvn_cusstom_info" method="post" novalidate="novalidate">
+            <div class="popup-customer-info">
+              <div class="popup-customer-info-title">Thông tin người mua</div>
+              <div class="popup-customer-info-group">
+                <div class="popup-customer-info-item-2 popup-customer-info-name">
+                  <input type="text" class="customer-name disabled" name="customer-name" pattern="[^:]*$" placeholder="Họ và tên" value="<%= current_user.name %>">
+                </div>
+                <div class="popup-customer-info-item-2 popup-customer-info-phone">
+                  <input type="text" class="customer-address disabled" name="customer-address" placeholder="Số nhà, tên đường " value="<%= current_user.address %>">
+                </div>
+              </div>
+              <div class="popup-customer-info-title customer_coupon_title">Hình thức thanh toán</div>
+              <div class="popup-customer-info-group popup-customer-info-radio paymentmethob-wrap">
+                <label>
+                <input type="radio" name="customer-paymentmethob" value="cod" checked="">
+                <span>Cash on delivery (COD)</span>
+                </label>
+                <label>
+                <input type="radio" name="customer-paymentmethob" value="bacs">
+                <span>Chuyển khoản ngân hàng</span>
+                </label>
+              </div>
+              <div class="popup-customer-info-group">
+                <div class="popup-customer-info-item-1 popup_quickbuy_shipping">
+                  <div class="popup_quickbuy_shipping_title">Tổng:</div>
+                  <div class="popup_quickbuy_total_calc"><%= format_number_with_dots(@product.price) %> ₫</div>
+                </div>
+              </div>
+              <div class="popup-customer-info-group">
+                <div class="popup-customer-info-item-1">
+                  <input type="hidden" id="total_price_<%= @product.id %>" value="<%= @product.price %>">
+                  <button type="button" class="devvn-order-btn" onclick="Product.orderProduct(<%= @product.id %>)">Đặt hàng ngay</button>
+                </div>
+              </div>
+              <div class="popup-customer-info-group">
+                <div class="popup-customer-info-item-1">
+                  <div class="devvn_quickbuy_mess"></div>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="prod_id" id="prod_id" value="19008">
+            <input type="hidden" name="prod_nonce" id="prod_nonce" value="">
+            <input type="hidden" name="enable_ship" id="enable_ship" value="">
+            <input name="require_address" id="require_address" type="hidden" value="1">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

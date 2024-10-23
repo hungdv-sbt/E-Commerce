@@ -23,12 +23,16 @@ require("carousel");
 import * as Routes from './routes.js.erb';
 import Popup from './popup';
 import Shared from "./shared";
+import Product from "./product";
+import CounterProduct from "./counter_product";
 import "flickity/dist/flickity.min.css";
 import "stylesheets/carousel.css";
 
 window.Routes = Routes;
 window.Popup = new Popup;
 window.Shared = new Shared;
+window.Product = new Product;
+window.CounterProduct = new CounterProduct;
 
 $( document ).ready(function ()
 {

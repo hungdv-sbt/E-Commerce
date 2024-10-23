@@ -1,0 +1,269 @@
+.xlwcty_wrap .xlwcty_Box.xlwcty_order_details_2_col {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9d9d9;
+  background-color: #ffffff;
+}
+.xlwcty_wrap .xlwcty_Box {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  background: #fff;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_title {
+  line-height: 24px;
+}
+.xlwcty_order_details_2_col .xlwcty_title {
+  font-size: 20px;
+  text-align: left;
+}
+.xlwcty_wrap .xlwcty_title {
+  margin: 0 0 15px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list {
+  font-size: 15px;
+  line-height: 20px;
+  color: #4c4c4c;
+  font-weight: 400;
+}
+.xlwcty_clearfix:after, .xlwcty_clearfix:before {
+  content: '';
+  display: block;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv {
+  width: 70%;
+  float: left;
+  padding: 10px 10px 15px 20px;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_img {
+  position: relative;
+  width: 60px;
+  float: left;
+}
+a {
+  color: #22246b;
+}
+.xlwcty_wrap a {
+  -webkit-transition: ease-in-out .4s all;
+  -khtml-transition: ease-in-out .4s all;
+  -moz-transition: ease-in-out .4s all;
+  -ms-transition: ease-in-out .4s all;
+  -o-transition: ease-in-out .4s all;
+  transition: ease-in-out .4s all;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_img img {
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ebebeb;
+  display: block;
+  width: 100%;
+}
+.xlwcty_wrap img {
+  width: 30%;
+  max-width: 100%;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_name {
+  padding-left: 75px;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_name a {
+  color: #4c4c4c;
+  text-decoration: none;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_name .xlwcty_t {
+  display: block;
+}
+span.xlwcty_t {
+  color: #21216d;
+  font-weight: bold;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_name .xlwcty_info {
+  display: block;
+  font-size: 13px;
+  line-height: 20px;
+  color: #959494;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_leftDiv .xlwcty_p_name .xlwcty_info .wc-item-meta {
+  list-style: none;
+}
+.xlwcty_clearfix:after {
+  clear: both;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col .xlwcty_pro_list .xlwcty_rightDiv {
+  text-align: right;
+  width: 30%;
+  float: left;
+  padding: 10px 20px 15px 10px;
+}
+span.amount {
+  white-space: nowrap;
+  color: #111;
+  font-weight: bold;
+}
+span.amount {
+  white-space: nowrap;
+  color: #111;
+  font-weight: bold;
+}
+
+.xlwcty_wrap .xlwcty_order_details_2_col table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  border-top: 1px solid #ebebeb;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr {
+  display: table-row;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:first-child td, .xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:first-child th {
+  padding-top: 15px;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr td, .xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr th {
+  display: table-cell;
+  border: none;
+  font-size: 15px;
+  line-height: 20px;
+  color: #4c4c4c;
+  font-weight: 400;
+  background: 0 0;
+  text-transform: initial;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr th {
+  width: 70%;
+  text-align: left;
+  padding: 5px 10px 5px 20px;
+}
+
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:nth-last-child(2) td, .xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:nth-last-child(2) th {
+  padding-bottom: 15px;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:last-child td, .xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:last-child th {
+  padding-top: 15px;
+  border-top: 1px solid #ebebeb;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr:last-child td {
+  font-size: 28px;
+  line-height: 32px;
+}
+.xlwcty_wrap .xlwcty_margin_top {
+  margin-top: 15px;
+}
+.xlwcty_wrap .xlwcty_left {
+  text-align: left;
+}
+.xlwcty_wrap .xlwcty_Box p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.xlwcty_wrap .xlwcty_order_details_2_col table tfoot tr td {
+  width: 30%;
+  text-align: right;
+  padding: 5px 20px 5px 10px;
+}
+.xlwcty_userN {
+  color: #22246b;
+  margin-left: 0 !important;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
