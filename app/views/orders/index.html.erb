@@ -14,15 +14,16 @@
             <% order.order_items.each do |item| %>
               <div class="xlwcty_pro_list  xlwcty_clearfix">
                 <div class="xlwcty_leftDiv xlwcty_clearfix">
+                  <% product = get_image_product_when_deleted(item.product_id).blank? ? item.product : get_image_product_when_deleted(item.product_id) %>
                   <div class="xlwcty_p_img">
-                    <a href="/"><%= image_tag url_for(item.product.images.first), width: '100px', height: '100px' %></a>
+                    <a href="/"><%= image_tag url_for(product.images.first), width: '100px', height: '100px' %></a>
                   </div>
                   <div class="xlwcty_p_name">
-                    <a href=""><span class="xlwcty_t"><%= item.product.name %></span></a>
+                    <a href=""><span class="xlwcty_t"><%= product.name %></span></a>
                     <span>Số lượng: <%= item.quantity %></span>
                   </div>
                 </div>
-                <div class="xlwcty_rightDiv"><span class="woocommerce-Price-amount amount"><bdi><%= format_number_with_dots(item.quantity * item.product.price) %><span class="woocommerce-Price-currencySymbol">&nbsp;₫</span></bdi></span></div>
+                <div class="xlwcty_rightDiv"><span class="woocommerce-Price-amount amount"><bdi><%= format_number_with_dots(item.quantity * product.price) %><span class="woocommerce-Price-currencySymbol">&nbsp;₫</span></bdi></span></div>
               </div>
             <% end %>
             <table>

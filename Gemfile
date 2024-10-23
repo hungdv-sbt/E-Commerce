@@ -34,6 +34,8 @@ gem 'dotenv-rails'
 gem "js-routes"
 gem 'jquery-rails'
 gem 'sweetalert2-rails'
+gem 'rails_admin', '~> 3.2', '>= 3.2.1'
+gem 'acts_as_paranoid'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

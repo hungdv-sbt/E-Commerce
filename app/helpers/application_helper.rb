@@ -4,4 +4,8 @@ module ApplicationHelper
 
     number.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1.').reverse
   end
+
+  def get_image_product_when_deleted(id)
+    Product.with_deleted.where(id: id).first
+  end
 end
