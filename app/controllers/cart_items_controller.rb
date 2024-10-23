@@ -43,7 +43,7 @@ class CartItemsController < ApplicationController
   private
 
   def list_cart_items
-    @cart_items = current_user.cart.cart_items.includes(:product).order(id: :desc)
+    @cart_items = current_user.cart.present? ? current_user.cart.cart_items.includes(:product).order(id: :desc) : []
   end
 
   def cart_item
@@ -51,6 +51,8 @@ class CartItemsController < ApplicationController
   end
 
   def total_price
+    return 0 if current_user.cart.blank?
+
     arr_price = current_user.cart.cart_items.map{ |cart| cart.quantity * cart.product.price }
 
     arr_price.inject{ |sum, price| sum += price }

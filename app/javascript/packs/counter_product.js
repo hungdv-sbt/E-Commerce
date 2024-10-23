@@ -39,7 +39,7 @@ export default class CounterProduct {
   payment(){
     const totalPrice = $('#total-price').val();
     const url = Routes.orders_path()
-    Popup.confirm('Are you sure you want to remove', {
+    Popup.confirm('Are you sure you want to buy', {
       success: () => {
         Shared.callAjaxRequest(url, {total_price: totalPrice}, 'post')
         .done(function(){
