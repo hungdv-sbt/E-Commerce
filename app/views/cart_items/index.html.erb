@@ -6,14 +6,11 @@
     <div class="page-title-inner flex-row medium-flex-wrap container">
       <div class="flex-col flex-grow medium-text-center">
         <nav class="breadcrumbs flex-row flex-row-center heading-font checkout-breadcrumbs text-center strong h2 uppercase">
-          <a href="https://enic.vn/cart/" class="current">
-          Shopping Cart  	   	</a>
-          <span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
-          <a href="https://enic.vn/checkout/" class="hide-for-small">
-          Checkout details  	   </a>
-          <span class="divider hide-for-small"><i class="icon-angle-right"></i></span>
-          <a href="#" class="no-click hide-for-small">
-          Order Complete  	   </a>
+          <a href="javascript:void()" class="current">Shopping Cart</a>
+          <span class="divider hide-for-small"><%= image_tag 'chevron-double-right.svg', style: 'padding-bottom: 6px;' %></span>
+          <a href="javascript:void()" class="hide-for-small">Checkout details</a>
+          <span class="divider hide-for-small"><%= image_tag 'chevron-double-right.svg', style: 'padding-bottom: 6px;' %></span>
+          <a href="javascript:void()" class="no-click hide-for-small">Order Complete</a>
         </nav>
       </div>
     </div>
@@ -42,9 +39,7 @@
             <div class="cart_totals ">
               <table cellspacing="0">
                 <thead>
-                  <tr>
-                    <th class="product-name" colspan="2" style="border-width:3px;">Cộng giỏ hàng</th>
-                  </tr>
+                  <tr><th class="product-name" colspan="2" style="border-width:3px;">Cộng giỏ hàng</th></tr>
                 </thead>
               </table>
               <h2>Cộng giỏ hàng</h2>

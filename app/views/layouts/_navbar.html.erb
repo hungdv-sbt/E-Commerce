@@ -7,7 +7,7 @@
         <div class="flex-col hide-for-medium flex-right d-flex">
           <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
             <li class="cart-item has-icon">
-              <a href="<%= cart_items_path() %>" class='header-cart-link off-canvas-toggle nav-top-link is-small' data-open='#cart-popup' data-class='off-canvas-cart' data-pos='right' title="Gio Hang">
+              <a href="<%= cart_items_path() %>" id="cart-shop" class='header-cart-link off-canvas-toggle nav-top-link is-small' data-open='#cart-popup' data-class='off-canvas-cart' data-pos='right' title="Gio Hang">
                 <%= image_tag 'cart-4.svg' %>
                 <span class="counter-shoping"><%= @count || 0 %></span>
               </a>

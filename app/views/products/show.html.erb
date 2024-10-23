@@ -21,12 +21,10 @@
         <li class="xiphong" style="display:none;">Tặng kèm xi phông</li>    
         <li class="voixitbon" style="display:none;">Giá giảm còn 4.500.000 đ (màu inox và đen) và 5.000.000 đ (màu gold) khi mua cùng bồn tắm<span class="saleoff">HOT</span></li>
         <li class="senks" style="display:none;">Đặc biệt tặng kèm kệ để đồ gắn trên sen tắm khi đặt hàng hôm nay <span class="saleoff">HOT</span></li>
-        <li>Miễn phí lắp đặt tại tỉnh/thành phố có showroom Enic</li>
         <li>Miễn phí vận chuyển toàn quốc</li>
         <li>Nhận hàng được kiểm tra trước khi thanh toán</li>
       </ul>
       <ul class="bep" style="display:none;">
-        <li>Miễn phí lắp đặt tại tỉnh/thành phố có showroom Enic</li>
         <li>Miễn phí vận chuyển toàn quốc</li>
         <li>Nhận hàng được kiểm tra trước khi thanh toán</li>
       </ul>
@@ -42,17 +40,11 @@
           <input type="hidden" id="price" value="<%= @product.price %>">
           <p class="gia"><span class="giagiam"><%= @product.decorate.formatted_price %>&nbsp;₫</span></p>
           <div><%= @product.description.html_safe %></div>
-          <div class="khuyen-mai tug">
-            <h4>Bộ tủ phòng tắm bao gồm:</h4>
-            <ul>
-              <li>Tủ gương, tủ chậu Lavabo, đặc biệt tặng kèm xi phông ống dẫn inox 304 (chưa bao gồm vòi rửa)</li>
-            </ul>
-          </div>
         </div>
       </div>
 		</div>
 
-    <div class="sticky-add-to-cart-wrapper">
+    <div class="sticky-add-to-cart-wrapper mt-11px">
       <div class="sticky-add-to-cart" >
         <div class="quantity buttons_added">
           <input type="button" value="-" class="minus button is-form" onclick="Product.removeQuantity('<%= @product.id %>')">

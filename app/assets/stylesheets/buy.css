@@ -1,0 +1,78 @@
+body{
+  position: relative;
+}
+
+.img-product-fly{
+  position: absolute;
+  z-index: 99999999;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid #21216d;
+  transition: all 1s ease;
+  animation: MyAnimation 1.5s infinite ;
+}
+
+@keyframes MyAnimation {
+  0%   {transform: scale(0.5)}
+  25%  {transform: scale(1)}
+  75%  {transform: scale(1)}
+  100% {transform: scale(0)}
+}
+
+nav.navbar.navbar-default{
+  background:orange;
+}
+
+p.text {
+  color:red;
+  font-weight:bold;
+}
+
+a.btn-buy-now {
+  -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+  transition: width 2s, height 2s, transform 2s;
+  margin-left:30px;
+}
+
+img.H {
+  position: relative;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 4s;
+  animation-name: example;
+  animation-duration: myfirst 5s linear 2s infinite alternate;
+  z-index:9;
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:190px; top:0px;}
+  50%  {background-color:blue; left:380px; top:0px;}
+  75%  {background-color:green; left:745px; top:0px;}
+  100% {background-color:red; left:950px; top:0px;}
+}
+
+img.ST{
+  position: relative;
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 4s;
+  animation-name: example1;
+  animation-duration: myfirst 5s linear 2s infinite alternate;
+  z-index:9;
+}
+
+.btn1, .btn2{
+  cursor:pointer;
+}
+
+
+@keyframes example1 { 
+  0%   {background-color:red; right:0px; top:0px;}
+  25%  {background-color:yellow; right:190px; top:0px;}
+  50%  {background-color:blue; right:380px; top:0px;}
+  75%  {background-color:green; right:745px; top:0px;}
+  100% {background-color:red; right:950px; top:0px;}
+}
+  
+  
+  

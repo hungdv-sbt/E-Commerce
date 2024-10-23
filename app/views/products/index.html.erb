@@ -1,3 +1,6 @@
+<%= javascript_pack_tag "buy" %>
+<%= stylesheet_link_tag 'buy' %>
+
 <div class="">
   <% if @products.length > 0%>
     <div id="col-559391347" class="col title-moi bctm small-12 large-12">
@@ -11,11 +14,11 @@
     <% @products.each do |product| %>
       <div class="product-small col has-hover rtwpvs-product product type-product post-38552 status-publish first instock product_cat-tu-lavabo has-post-thumbnail sale shipping-taxable purchasable product-type-variable has-default-attributes">
         <div class="col-inner">
-          <div class="product-small box">
+          <div class="product-small box thumbnail">
             <div class="box-image">
               <div class="image-zoom">
                 <%= link_to product do %>
-                  <%= image_tag url_for(product.images.first), width: 600, height: 600 %>
+                  <%= image_tag url_for(product.images.first), width: 600, height: 600, class: 'b-items__item__img' %>
                 <% end %>
               </div>
             </div>
@@ -32,8 +35,13 @@
                   </span>
                 </span>
               </div>
-              <div class="add-to-cart-button">
-                <a href="javascript:void()" onclick="Product.addCart('<%= product.id %>')" data-quantity="1" class="primary is-small mb-0 button product_type_variable add_to_cart_button is-outline rtwpvs_add_to_cart rtwpvs_ajax_add_to_cart" data-product_id="<%= product.id %>" data-product_sku="" aria-label="Lựa chọn cho “Bộ tủ lavabo kết hợp tủ gương led cao cấp Enic BT Plus 80cm - 100cm”" rel="nofollow" data-variation_id="" data-variation="">Them Vao Gio Hang</a>
+              <div class="add-to-cart-button caption mt-11px">
+                <a href="javascript:void()"  data-quantity="1" class="primary is-small mb-0 button product_type_variable add_to_cart_button is-outline rtwpvs_add_to_cart rtwpvs_ajax_add_to_cart btn-buy-now" data-product_id="<%= product.id %>" rel="nofollow" data-variation_id="" data-variation="">Them Vao Gio Hang</a>
+                <% if current_user.admin? %>
+                  <%= link_to 'Edit', edit_product_path(product.id), class: 'btn btn-edit-and-destroy color-blue' %>
+                  <span clas="mx-1 ">|</span>
+                  <%= link_to 'Delete', product_path(product.id), class: 'btn btn-edit-and-destroy color-red', method: 'delete' %>
+                <% end %>
               </div>
             </div>
           </div>

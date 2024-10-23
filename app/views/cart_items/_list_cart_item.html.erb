@@ -8,10 +8,10 @@
         <a href="javascript:void()" onclick="CounterProduct.removeCart(<%= cart.id %>)" data-product_id="<%= cart.product.id %>" class="remove" aria-label="Xóa sản phẩm này">×</a>						
       </div>
       <div class="product-thumbnail">
-        <a href="/"><%= image_tag url_for(cart.product.images.first) %></a>						
+        <a href="<%= product_path(cart.product.id) %>"><%= image_tag url_for(cart.product.images.first) %></a>						
       </div>
       <div class="w-50" style="margin-left: 5px;">
-        <a href="/"><%= cart.product.name %></a>
+        <a href="<%= product_path(cart.product.id) %>"><%= cart.product.name %></a>
       </div>
     </div>
     <div class="product-price" data-title="Giá">

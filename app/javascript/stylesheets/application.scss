@@ -136,6 +136,7 @@ a.woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   color: #201d6f;
   font-weight: bold;
   font-size: 16px;
+  min-height: 42px;
 }
 
 ul {
@@ -849,7 +850,26 @@ embed,iframe,object {
 }
 
 .has-shadow>.col>.col-inner {
-  background-color: #fff
+  background-color: #fff;
+  min-height: 390px;
+}
+
+.btn.btn-edit-and-destroy {
+  padding: 0 0.25rem !important;
+  margin: 0 !important;
+  text-decoration: underline !important;;
+}
+
+.color-blue {
+  color: #22246b;
+}
+
+.color-red {
+  color: #cf2e2e;
+}
+
+.mt-11px {
+  margin-top: 11px !important;
 }
 
 .col-hover-focus .col-inner,.col-hover-fade .col-inner,.col-hover-blur .col-inner {
@@ -6156,6 +6176,11 @@ ul.links li:first-child {
 
 ul.links li:last-child {
   margin-right: 0
+}
+
+div:where(.swal2-container) button:where(.swal2-styled) {
+  margin: .225em !important;
+  padding: .225em 1.1em !important;
 }
 
 .next-prev-nav .flex-col {
