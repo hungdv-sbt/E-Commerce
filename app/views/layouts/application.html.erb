@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' if user_signed_in? %>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="d-table h-100 w-100">
+        <div class="d-tablecell">
+          <div class="d-flex justify-content-center">
+            <div class="loader"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- End Preloader -->
+     <div class="row category-page-row">
+      <%= yield %>
+    </div>
   </body>
 </html>

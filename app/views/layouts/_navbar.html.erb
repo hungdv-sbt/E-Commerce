@@ -1,0 +1,39 @@
+<header class="header has-sticky sticky-jump" id="header" style="height: 60px">
+  <div class="header-wrapper stuck">
+    <div class="header-main " id="masthead">
+      <div class="header-inner flex-row container logo-left medium-logo-center">
+        <div id="logo" class="flex-col logo"><%= link_to 'Ecommerce', '/' %></div>
+
+        <div class="flex-col hide-for-medium flex-right d-flex">
+          <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
+            <li class="cart-item has-icon">
+              <a href="<%= cart_items_path() %>" class='header-cart-link off-canvas-toggle nav-top-link is-small' data-open='#cart-popup' data-class='off-canvas-cart' data-pos='right' title="Gio Hang">
+                <%= image_tag 'cart-4.svg' %>
+                <span class="counter-shoping"><%= @count || 0 %></span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav mb-2 mb-lg-0" style="margin-left: 2rem;">
+            <li class="nav-item dropdown mb-0">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.name %>
+              </a>
+              <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                  <li><a class="dropdown-item" href="<%= new_product_path() %>">Create Product</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                <% end %>
+                <li><%= link_to 'Orders', orders_path(), class: 'dropdown-item' %></li>
+                <li><%= link_to 'Edit User', edit_user_registration_path(), class: 'dropdown-item' %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", method: 'delete' %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+          
+      </div>
+    </div>
+  </div>
+</header>

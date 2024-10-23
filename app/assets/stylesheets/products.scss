@@ -1,3 +1,132 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.product-type-variable .price-wrapper .price {
+  font-size: 14px;
+  color: #22246b !important;
+}
+.price-wrapper .price {
+  color: #22246b;
+  display: block;
+}
+
+.price {
+  line-height: 1;
+}
+.product-type-variable .price-wrapper .price .amount {
+  color: #22246b;
+}
+
+span.amount {
+  white-space: nowrap;
+  color: #111;
+  font-weight: bold;
+}
+
+.box-text.box-text-products {
+  padding: 5px 10px 15px 10px;
+}
+
+.title-moi {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+h3.titledanh {
+  z-index: 10;
+  padding: 0px 0px;
+  font-size: 20px;
+  position: relative;
+  color: #21216d;
+  background: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background: #fff;
+  z-index: 10;
+}
+h3.titledanh span {
+  background: #fff !important;
+  z-index: 12;
+  position: relative;
+  padding: 0px 10px;
+}
+.title-moi h3:before {
+  content: "";
+  border-bottom: 1px solid #21216d;
+  border-top: 0px solid #21216d;
+  display: table;
+  top: 55%;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+}
+.title-moi h3:after {
+  content: "";
+  border-bottom: 1px solid #21216d;
+  /* border-top: 1px solid #201d6f; */
+  display: table;
+  top: 48%;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+}
+
+a.primary.is-small.mb-0.button.product_type_variable.add_to_cart_button.is-outline {
+  border: 1px solid #fff;
+  background: #22246b;
+  color: #fff;
+  font-size: 10px;
+  padding: 0px 13px;
+  margin: 11px 10px 0px 0px;
+  height: 32px;
+  line-height: 3;
+}
+input[type='submit'], input[type="button"], button:not(.icon), .button:not(.icon) {
+  border-radius: 5px !important;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

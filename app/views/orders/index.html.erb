@@ -1,0 +1,49 @@
+<div class="xlwcty_userN mb-4 text-center">Cảm ơn khách hàng <%= current_user.name %> đã tin dùng sản phẩm của Ecommerce</div>
+
+<% @orders.each do |order| %>
+  <div class="large-12 col">
+    <div class="col-inner">
+      <div class="xlwcty_wrap xlwctyCenter xlwcty_circle_show">
+        <div class="xlwcty_in_wrap">
+          <div class="xlwcty_order_info">
+            <div class="xlwcty_circle"><i class="xlwcty-fa xlwcty-fa-check"></i></div>
+            <div class="xlwcty_order_no">Đơn hàng #<%= order.id %></div>
+          </div>
+          <div class="xlwcty_Box xlwcty_order_details_2_col">
+            <div class="xlwcty_title">Chi tiết đơn hàng</div>
+            <% order.order_items.each do |item| %>
+              <div class="xlwcty_pro_list  xlwcty_clearfix">
+                <div class="xlwcty_leftDiv xlwcty_clearfix">
+                  <div class="xlwcty_p_img">
+                    <a href="/"><%= image_tag url_for(item.product.images.first), width: '100px', height: '100px' %></a>
+                  </div>
+                  <div class="xlwcty_p_name">
+                    <a href=""><span class="xlwcty_t"><%= item.product.name %></span></a>
+                    <span>Số lượng: <%= item.quantity %></span>
+                  </div>
+                </div>
+                <div class="xlwcty_rightDiv"><span class="woocommerce-Price-amount amount"><bdi><%= format_number_with_dots(item.quantity * item.product.price) %><span class="woocommerce-Price-currencySymbol">&nbsp;₫</span></bdi></span></div>
+              </div>
+            <% end %>
+            <table>
+              <tfoot>
+                <tr>
+                  <th scope="row">Tổng số phụ:</th>
+                  <td><span class="woocommerce-Price-amount amount"><bdi><%= format_number_with_dots(order.total_price) %>&nbsp;₫</span></bdi></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Phương thức thanh toán:</th>
+                  <td>Cash on delivery (COD)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tổng cộng:</th>
+                  <td><span class="woocommerce-Price-amount amount"><bdi><%= format_number_with_dots(order.total_price) %>&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
