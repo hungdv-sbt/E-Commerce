@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    redirect_product_blank?(@product)
   end
 
   # GET /products/new
@@ -18,6 +19,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    redirect_product_blank?(@product)
   end
 
   # POST /products or /products.json
@@ -37,6 +39,8 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    redirect_product_blank?(@product)
+
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to products_path, notice: "Product was successfully updated." }
@@ -50,6 +54,8 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    redirect_product_blank?(@product)
+
     @product.destroy
 
     respond_to do |format|
@@ -62,7 +68,7 @@ class ProductsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
   end
 
   # Only allow a list of trusted parameters through.
@@ -72,5 +78,9 @@ class ProductsController < ApplicationController
 
   def admin?
     redirect_to root_path unless current_user&.admin?
+  end
+
+  def redirect_product_blank?(product)
+    return redirect_to root_path if product.blank?
   end
 end
