@@ -6,5 +6,7 @@ class CreateCarts < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :carts, :deleted_at
   end
 end

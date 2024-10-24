@@ -8,5 +8,7 @@ class CreateOrderItems < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :order_items, :deleted_at
   end
 end

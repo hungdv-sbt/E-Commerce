@@ -8,5 +8,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :orders, :deleted_at
   end
 end

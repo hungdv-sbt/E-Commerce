@@ -9,6 +9,7 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.bigint   :byte_size,  null: false
       t.string   :checksum,   null: false
       t.datetime :created_at, null: false
+      t.datetime :deleted_at
 
       t.index [ :key ], unique: true
     end
@@ -19,9 +20,13 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.references :blob,     null: false
 
       t.datetime :created_at, null: false
+      t.datetime :deleted_at
 
       t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
+
+    add_index :active_storage_blobs, :deleted_at
+    add_index :active_storage_attachments, :deleted_at
   end
 end
